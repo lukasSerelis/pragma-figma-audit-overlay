@@ -16,6 +16,10 @@ into the same path in your repository, then ask your agent:
 /pragma-figma-audit-overlay <Figma frame URL>
 ```
 
+## Live Examples
+
+Three completed Juju runs: [source frames, inventories, and overlay maps](examples/README.md).
+
 ## Prerequisites
 
 - A [skills-compatible agent](https://code.visualstudio.com/docs/copilot/customization/agent-skills).
