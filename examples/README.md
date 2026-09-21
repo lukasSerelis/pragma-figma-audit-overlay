@@ -3,6 +3,16 @@
 Each example preserves its original frame, creates a linked Pragma inventory,
 and adds a front-layer-only annotation overlay.
 
+## Screenshot Example
+
+### Linked Pragma Inventory
+
+<img src="assets/inventory-configuration-wizard.png" alt="Juju configuration wizard Pragma migration inventory" width="760">
+
+### Toggleable Overlay Map
+
+<img src="assets/overlay-configuration-wizard.png" alt="Juju configuration wizard annotated Pragma migration map" width="760">
+
 | Flow | Source | Inventory | Overlay map |
 | --- | --- | --- | --- |
 | Configuration wizard | [source](https://www.figma.com/design/Rs1v3IS0oY2RK4CU4yo4Ly/25.10-JAAS-model-management---Juju?node-id=1572-104888) | [inventory](https://www.figma.com/design/Rs1v3IS0oY2RK4CU4yo4Ly/25.10-JAAS-model-management---Juju?node-id=2976-9711) | [map](https://www.figma.com/design/Rs1v3IS0oY2RK4CU4yo4Ly/25.10-JAAS-model-management---Juju?node-id=2975-6715) |
