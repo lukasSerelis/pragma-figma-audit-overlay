@@ -20,11 +20,13 @@ into the same path in your repository, then ask your agent:
 
 - A [skills-compatible agent](https://code.visualstudio.com/docs/copilot/customization/agent-skills).
 - The [Figma remote MCP server](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/) connected with write access to the file.
-- Access to your Pragma and application Figma libraries. See
-  [Canonical Pragma](https://github.com/canonical/pragma).
+- The Pragma MCP or CLI tools available to the agent for component, token, and
+  implementation lookups. See [Canonical Pragma](https://github.com/canonical/pragma).
+- Access to your Pragma and application Figma libraries.
 
-The skill preserves the source frame, inventories linked Pragma replacements,
-and adds one toggleable annotation layer only for visible front-layer elements.
+The skill uses Pragma tools for the migration decisions and Figma MCP for canvas
+writes. It preserves the source frame, inventories linked replacements, and adds
+one toggleable annotation layer only for visible front-layer elements.
 
 ## License
 

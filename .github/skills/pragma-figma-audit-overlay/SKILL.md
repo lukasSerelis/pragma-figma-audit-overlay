@@ -14,6 +14,8 @@ a linked Pragma component, typography, and implementation inventory.
 - The user provides a Figma `fileKey` and original frame `nodeId`.
 - Treat the original as immutable.
 - Use the official Figma MCP; load `figma-use` before every `use_figma` call.
+- Use the Pragma MCP or CLI tools to resolve blocks, tokens, implementations,
+   and application-level patterns before writing to Figma.
 - Use actual linked Pragma, Pragma Apps, or Launchpad Pragma instances. Never
   substitute Vanilla for a missing Pragma component.
 
@@ -21,9 +23,9 @@ a linked Pragma component, typography, and implementation inventory.
 
 1. Capture source metadata and a screenshot. Inventory visible regions,
    typography, geometry, components, assets, and overlapping layers.
-2. Resolve components in this order: Code Connect, existing linked Pragma
-   screens, then design-system search. Record true gaps as foundation-based
-   compositions rather than importing Vanilla.
+2. Resolve components in this order: Pragma block and implementation lookups,
+   Code Connect, existing linked Pragma screens, then design-system search.
+   Record true gaps as foundation-based compositions rather than importing Vanilla.
 3. Build `Pragma migration inventory - <screen>` with live linked specimens,
    variant guidance, a 14px (`dimension.size.fontSize.300`) body scale, and
    wrap-safe specification copy.
