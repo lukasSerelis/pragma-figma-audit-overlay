@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="650" viewBox="0 0 1440 650" role="img" aria-labelledby="title desc">
+  <title id="title">Toggleable migration overlay example</title>
+  <desc id="desc">A Figma-like application frame with a visible front side panel and labels only for exposed components.</desc>
+  <rect width="1440" height="650" fill="#f7f7f7"/>
+  <rect x="28" y="28" width="1384" height="594" rx="8" fill="#ffffff" stroke="#cdcdcd"/>
+  <rect x="29" y="29" width="216" height="592" fill="#f3f3f3"/>
+  <text x="58" y="84" fill="#1f1f1f" font-family="Ubuntu Sans, sans-serif" font-size="22" font-weight="600">Navigation</text>
+  <rect x="58" y="110" width="154" height="24" rx="4" fill="#d9d9d9"/>
+  <rect x="58" y="146" width="120" height="16" rx="4" fill="#e8e8e8"/>
+  <rect x="277" y="76" width="960" height="1" fill="#d9d9d9"/>
+  <text x="277" y="122" fill="#1f1f1f" font-family="Ubuntu Sans, sans-serif" font-size="32" font-weight="600">Credential status</text>
+  <rect x="277" y="160" width="610" height="34" rx="4" fill="#f3f3f3"/>
+  <g transform="translate(277 230)">
+    <rect width="900" height="190" fill="#ffffff" stroke="#d9d9d9"/>
+    <rect width="900" height="36" fill="#f3f3f3"/>
+    <path d="M0 84h900M0 138h900" stroke="#d9d9d9"/>
+  </g>
+  <rect x="966" y="29" width="446" height="592" fill="#ffffff" stroke="#737373"/>
+  <text x="996" y="84" fill="#1f1f1f" font-family="Ubuntu Sans, sans-serif" font-size="26" font-weight="600">Set new credential</text>
+  <rect x="996" y="120" width="360" height="32" rx="4" fill="#f3f3f3"/>
+  <rect x="996" y="174" width="360" height="120" fill="#ffffff" stroke="#d9d9d9"/>
+  <rect x="1160" y="548" width="96" height="36" rx="4" fill="#1f1f1f"/>
+  <g font-family="Ubuntu Sans, sans-serif" font-size="15" font-weight="600">
+    <rect x="54" y="182" width="178" height="42" rx="3" fill="#d8f3dc" stroke="#2f7d32"/>
+    <text x="66" y="208" fill="#163b18">Launchpad navigation</text>
+    <rect x="270" y="126" width="290" height="42" rx="3" fill="#d8f3dc" stroke="#2f7d32"/>
+    <text x="282" y="152" fill="#163b18">Pragma page title + status</text>
+    <rect x="270" y="430" width="290" height="42" rx="3" fill="#d8f3dc" stroke="#2f7d32"/>
+    <text x="282" y="456" fill="#163b18">Visible DataTable cells</text>
+    <rect x="984" y="310" width="390" height="42" rx="3" fill="#d8f3dc" stroke="#2f7d32"/>
+    <text x="996" y="336" fill="#163b18">Pragma Apps SidePanel</text>
+  </g>
+  <text x="984" y="390" fill="#545454" font-family="Ubuntu Sans, sans-serif" font-size="16">Labels only describe visible front layers.</text>
+</svg>
