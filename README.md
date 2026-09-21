@@ -20,9 +20,29 @@ into the same path in your repository, then ask your agent:
 
 - A [skills-compatible agent](https://code.visualstudio.com/docs/copilot/customization/agent-skills).
 - The [Figma remote MCP server](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/) connected with write access to the file.
-- The Pragma MCP or CLI tools available to the agent for component, token, and
-  implementation lookups. See [Canonical Pragma](https://github.com/canonical/pragma).
 - Access to your Pragma and application Figma libraries.
+
+### Install Pragma MCP
+
+Recommended ([install Bun](https://bun.sh/)):
+
+```bash
+bun i -g @canonical/pragma-cli
+pragma setup
+```
+
+Or use [npm](https://www.npmjs.com/package/@canonical/pragma-cli):
+
+```bash
+npm i -g @canonical/pragma-cli
+pragma setup
+```
+
+`pragma setup` detects supported agent harnesses. Open a new agent chat, then
+ask: `Using Pragma, how many components are in the graph?`
+
+See [Canonical Pragma](https://github.com/canonical/pragma) for supported
+harnesses and setup details. VS Code and VSCodium support is experimental.
 
 The skill uses Pragma tools for the migration decisions and Figma MCP for canvas
 writes. It preserves the source frame, inventories linked replacements, and adds
