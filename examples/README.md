@@ -11,7 +11,7 @@ and adds a front-layer-only annotation overlay.
 
 ### Toggleable Overlay Map
 
-<img src="assets/overlay-configuration-wizard.png" alt="Juju configuration wizard annotated Pragma migration map" width="760">
+<img src="assets/overlay-create-model-wizard.png" alt="Juju create-model wizard annotated Pragma migration map" width="760">
 
 | Flow | Source | Inventory | Overlay map |
 | --- | --- | --- | --- |
