@@ -21,6 +21,22 @@ a linked Pragma component, typography, and implementation inventory.
 
 ## Workflow
 
+### Preflight
+
+Before writing, verify all of the following:
+
+1. Pragma responds to `pragma info` or a small Pragma MCP block/token read.
+2. Figma MCP can read the supplied frame and exposes `figma-use` and
+   `figma-generate-design` for the write workflow.
+3. The Figma frame resolves to a readable frame with a recorded name and size.
+4. Pragma Core/Apps and required application libraries are reachable through
+   linked libraries or a targeted design-system search.
+
+If any check fails, stop before canvas mutation and direct the user to the
+repository setup guidance.
+
+### Audit and overlay
+
 1. Capture source metadata and a screenshot. Inventory visible regions,
    typography, geometry, components, assets, and overlapping layers.
 2. Resolve components in this order: Pragma block and implementation lookups,

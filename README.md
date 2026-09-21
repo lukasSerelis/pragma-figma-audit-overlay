@@ -48,6 +48,9 @@ The skill uses Pragma tools for the migration decisions and Figma MCP for canvas
 writes. It preserves the source frame, inventories linked replacements, and adds
 one toggleable annotation layer only for visible front-layer elements.
 
+Before it writes, the skill checks Pragma access, Figma MCP read/write workflow
+availability, source-frame access, and the required linked libraries.
+
 ## License
 
 [MIT](LICENSE)
