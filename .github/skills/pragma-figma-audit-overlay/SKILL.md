@@ -21,11 +21,47 @@ a linked Pragma component, typography, and implementation inventory.
 
 ## Workflow
 
+### Execution efficiency
+
+- Reuse successful preflight reads as audit evidence. Keep a run-local ledger
+   of source IDs, page bounds, component mappings, variants, tokens, created IDs,
+   and completed checks. Invalidate affected entries after edits, library/data
+   changes, or a resumed session; never reuse stale geometry for placement.
+- Parallelize independent read-only work (source screenshots/metadata and
+   Pragma reads). Serialize canvas writes per file. Resolve shared component
+   families once across multiple frames, but audit each frame's states and
+   occlusion separately. Deduplication must not reduce inventory coverage.
+- Batch `block_lookup` names for the relevant tier; use `tier: all` only for
+   unresolved cross-tier discovery. Cache by block identity and tier, not just
+   display name. Read detailed guidance where needed before choosing a mapping;
+   do not treat a short or empty summary as evidence of a library gap.
+- Discover tools once per session. Reuse already loaded tool definitions, but
+   still load the required Figma guidance before every `use_figma` call.
+   Respect advertised batch limits; when a response is clamped, request only
+   omitted items instead of repeating the completed searches.
+- Prefer bounded, source-scoped reads returning unique component keys, relevant
+   properties, typography and bounds. Avoid whole-document dumps and repeated
+   library-owned descendants; request extra detail only for unresolved mappings.
+- Keep writes incremental by section. Where supported, return created IDs,
+   measured bounds and a section screenshot from the same build call. Inspect
+   that screenshot instead of fetching it again; combine related corrections
+   only after the current section passes its focused check.
+- On an unknown write outcome, inspect recorded IDs or a narrowly scoped name
+   once before retrying. Reuse anything that materialized; do not duplicate it.
+   If the clone path is confirmed broken, use the permitted fallback rather than
+   repeatedly retrying the same clone. Never bypass a server restriction.
+- Final checks remain mandatory: compare the source with its baseline; inspect
+   the completed inventory and overlay at readable resolution; check wrapping,
+   specimen overflow, front-layer coverage, overlay position and final canvas
+   bounds after all content grows. Move only new artifacts if they collide.
+   A screenshot URL or matching export dimensions alone is not visual validation.
+
 ### Preflight
 
 Before writing, verify all of the following:
 
-1. Pragma responds to `pragma info` or a small Pragma MCP block/token read.
+1. Pragma responds to a needed block/token read; reuse it in the mapping.
+   Use `pragma info` only for troubleshooting, not as proof of graph access.
 2. Figma MCP can read the supplied frame and exposes `figma-use` and
    `figma-generate-design` for the write workflow.
 3. The Figma frame resolves to a readable frame with a recorded name and size.
@@ -41,7 +77,8 @@ repository setup guidance.
 
 ### Audit and overlay
 
-1. Capture source metadata and a screenshot. Inventory visible regions,
+1. Reuse preflight metadata and screenshots unless the source changed. Fetch
+   only missing evidence. Inventory visible regions,
    typography, geometry, components, assets, and overlapping layers.
 2. Resolve each component through `block_lookup` first. Record its canonical
    block name, usage guidance, and relevant anatomy/modifiers. Use this to make
