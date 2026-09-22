@@ -31,6 +31,10 @@ Before writing, verify all of the following:
 3. The Figma frame resolves to a readable frame with a recorded name and size.
 4. Pragma Core/Apps and required application libraries are reachable through
    linked libraries or a targeted design-system search.
+5. Inspect top-level canvas bounds and reserve non-overlapping positions for the
+   inventory and annotated copy. Use a 160px gutter after the rightmost or
+   lowest occupied bounds; do not place a new top-level frame over an existing
+   frame, section, or group.
 
 If any check fails, stop before canvas mutation and direct the user to the
 repository setup guidance.
@@ -44,13 +48,17 @@ repository setup guidance.
    official Pragma documentation reference. Then use implementation lookups,
    Code Connect, existing linked screens, and design-system search. Record true
    gaps as foundation-based compositions rather than importing Vanilla.
-3. Build `Pragma migration inventory - <screen>` with live linked specimens,
+3. Build `Pragma migration inventory - <screen>` at its reserved clear canvas
+   position, then verify its bounds do not intersect an unrelated top-level
+   artifact. Add live linked specimens,
    variant guidance, a 14px (`dimension.size.fontSize.300`) body scale,
    wrap-safe specification copy, and a compact `Pragma docs` section listing
    each mapped block's canonical URI and short usage note.
 4. Duplicate the source and name it `<screen> - Migration map (annotated
-   reference)`. If `$fig.clone()` does not materialize, use one narrow fallback
-   that clones only the source node. Never modify the original.
+   reference)` at its reserved clear canvas position. Verify its bounds do not
+   intersect an unrelated top-level artifact. If `$fig.clone()` does not
+   materialize, use one narrow fallback that clones only the source node. Never
+   modify the original.
 5. Add one absolute layer named `Annotations - Toggle visibility`. Put every
    label inside it, set `clipsContent: false`, and use fixed/fill label widths
    with `textAutoResize: 'HEIGHT'` so labels wrap rather than crop.
@@ -58,7 +66,8 @@ repository setup guidance.
    tag only visible front-layer components in the overlay. For partly covered
    components, label only the exposed portion.
 7. Validate source immutability, duplicate dimensions, linked specimens,
-   wrapped labels, and no Vanilla substitution.
+   wrapped labels, collision-free top-level placement, and no Vanilla
+   substitution.
 
 ## Report
 
