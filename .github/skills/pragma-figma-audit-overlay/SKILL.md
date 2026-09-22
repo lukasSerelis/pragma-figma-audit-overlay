@@ -39,12 +39,15 @@ repository setup guidance.
 
 1. Capture source metadata and a screenshot. Inventory visible regions,
    typography, geometry, components, assets, and overlapping layers.
-2. Resolve components in this order: Pragma block and implementation lookups,
-   Code Connect, existing linked Pragma screens, then design-system search.
-   Record true gaps as foundation-based compositions rather than importing Vanilla.
+2. Resolve each component through `block_lookup` first. Record its canonical
+   block URI, usage guidance, and relevant anatomy/modifiers; this URI is the
+   official Pragma documentation reference. Then use implementation lookups,
+   Code Connect, existing linked screens, and design-system search. Record true
+   gaps as foundation-based compositions rather than importing Vanilla.
 3. Build `Pragma migration inventory - <screen>` with live linked specimens,
-   variant guidance, a 14px (`dimension.size.fontSize.300`) body scale, and
-   wrap-safe specification copy.
+   variant guidance, a 14px (`dimension.size.fontSize.300`) body scale,
+   wrap-safe specification copy, and a compact `Pragma docs` section listing
+   each mapped block's canonical URI and short usage note.
 4. Duplicate the source and name it `<screen> - Migration map (annotated
    reference)`. If `$fig.clone()` does not materialize, use one narrow fallback
    that clones only the source node. Never modify the original.
@@ -59,5 +62,5 @@ repository setup guidance.
 
 ## Report
 
-Return the original, inventory, and annotated-copy IDs; mapped components;
-known gaps; and the validation result.
+Return the original, inventory, and annotated-copy IDs; mapped components with
+canonical Pragma documentation URIs; known gaps; and the validation result.
